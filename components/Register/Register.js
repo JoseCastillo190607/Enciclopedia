@@ -1,13 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, Button} from "react-native";
+import { StyleSheet, Text, View, TextInput, Button, Image } from "react-native";
 import TopLogin from "./components/TopLogin";
 import DownLogin from "./components/DownLogin";
-// import ButtonLogin from "./components/Login/ButtonLogin";
 
-export default function App() {
+
+export default function Register() {
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <View style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
       <TopLogin style={styles.TopLogin}/>
       <Text style={styles.titulo}>Bienvenido!</Text>
       <TextInput
@@ -15,17 +16,21 @@ export default function App() {
         placeholder="Usuario/Correo Electronico"
       />
       <TextInput style={styles.inputUsuario} placeholder="Contraseña"/>
+      <TextInput style={styles.inputUsuario} placeholder="Confirmar Contraseña"/>
+
       <Text style={styles.subTitle}>Sing In to your account</Text>
       <Button
-        width={800}
-        color={'#046B99'}
+        color={'#DEFBAE'}
+        // color={'#046B99'}
+        borderRadius={50}
+
         title="Iniciar Sesión"
-      />                 
-      <Text style={styles.subTitle2}
-      >¿Olvidaste tu contraseña?</Text>
+        
+      >
+      </Button>
       <StatusBar style="auto" />
       <DownLogin style={styles.DownLogin}/>
-    </KeyboardAvoidingView>
+    </View>
   );
 }
 
@@ -57,13 +62,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
 
-  subTitle2: {
-    fontSize: 15,
-    color: "#1C304A",
-    fontWeight: "bold",
-    marginTop: 15,
-  },
-
   inputUsuario: {
     borderWidth: 1,
     borderColor: (255, 255, 255, 0.19),
@@ -77,6 +75,15 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     position: "relative"
   },
+
+  btnLogin: {
+    
+    borderRadius: 10,
+    backgroundColor: '#046B99',
+    
+
+  },
+
   TopLogin:{
     // position: "absolute",
     // marginTop:-650
