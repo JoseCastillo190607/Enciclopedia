@@ -1,8 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button, Image } from "react-native";
-import TopLogin from "./components/TopLogin";
-import DownLogin from "./components/DownLogin";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView} from "react-native";
+import TopLogin from "../TopLogin";
+import DownLogin from "../DownLogin";
 
 
 export default function Register() {
@@ -19,15 +19,16 @@ export default function Register() {
       <TextInput style={styles.inputUsuario} placeholder="Confirmar Contraseña"/>
 
       <Text style={styles.subTitle}>Sing In to your account</Text>
-      <Button
-        color={'#DEFBAE'}
-        // color={'#046B99'}
-        borderRadius={50}
+      
+      <TouchableOpacity
+        style={styles.btnRegister}
 
-        title="Iniciar Sesión"
-        
+        // title="Iniciar Sesión"
+        // onPress={}
       >
-      </Button>
+        <Text style={styles.TextBtnRgr}>Crear Cuenta</Text>
+      </TouchableOpacity>
+
       <StatusBar style="auto" />
       <DownLogin style={styles.DownLogin}/>
     </View>
@@ -96,5 +97,19 @@ const styles = StyleSheet.create({
     marginTop:"32%",
     marginBottom:"-71%",
 
+  },
+  btnRegister: {
+    width:"79%",
+    backgroundColor: "#DEFBAE",
+    alignItems:"center",
+    borderRadius:10,
+    height:"5%",
+    padding: "2%"
+  }, 
+
+  TextBtnRgr: {
+    color: "#1C304A",
+    fontWeight: "bold",
+    fontSize:16,
   }
 });
